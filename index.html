@@ -5,6 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digitalise - Pàgina Principal</title>
     <link rel="stylesheet" href="principal.css">
+    <style>
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #222;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            font-size: 14px;
+            flex: 1 1 100%;
+            margin-bottom: 10px;
+        }
+
+        .cookie-banner a {
+            color: #4fc3f7;
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .cookie-banner button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .cookie-banner .reject {
+            background-color: #f44336;
+        }
+
+        .cookie-banner button:hover {
+            opacity: 0.9;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,7 +76,7 @@
                 <span class="highlight">DIGITALISE</span>
             </div>
             <ul class="menu">
-                <li><a href="index.html">Página principal</a></li>
+                <li><a href="index.html">Pàgina principal</a></li>
                 <li><a href="serveis.html">Serveis</a></li>
                 <li><a href="productes.html">Productes</a></li>
                 <li><a href="contacte.html">Contacte</a></li>
@@ -34,16 +88,68 @@
     <main>
         <h1>¿Qui som?</h1>
         <p>
-            Som una empresa dedicada a digitalitzar la teva botiga, empresa o negoci,
-            aconseguint que la teva empresa siguin més competitives, rendibles i sostenibles en adaptar
-            processos operatius a les noves tecnologies digitals.
+            Som una empresa dedicada a digitalitzar la vostra botiga o empresa.
+            El nostre objectiu es aconseguir que el vostre negoci sigui més competitiu, rendible i sostenible adaptant els seus processos operatius a les noves tecnologies digitals.
         </p>
     </main>
+    
+    <main>
+        <h1>Horaris</h1>
+        <p>Digitalise està obert en els horaris de dilluns a divendres de 8h a 1:30h i de tardes de 3 h fins a les 19 h</p>
+    </main>
+
     <main>
         <h1>localització</h1>
         <p>La nostra botiga està ubicada a la Ronda Francesc Macià 88, Mataró</p>
         <img src="img/mapa.jpg">
-
     </main>
+
+    <!-- Banner de cookies / términos -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>
+            Utilitzem cookies per millorar la teva experiència. En continuar navegant acceptes els nostres 
+            <a href="terminos.html" target="_blank">Términos i Condicions</a>.
+        </p>
+        <div class="cookie-buttons">
+            <button onclick="aceptarCookies()">Acceptar</button>
+            <button class="reject" onclick="rechazarCookies()">Rebutjar</button>
+        </div>
+    </div>
+
+    <script>
+        function aceptarCookies() {
+            localStorage.setItem('cookiesConsent', 'aceptado');
+            document.getElementById('cookieBanner').classList.add('hidden');
+        }
+
+        function rechazarCookies() {
+            localStorage.setItem('cookiesConsent', 'rechazado');
+            document.getElementById('cookieBanner').classList.add('hidden');
+        }
+
+        window.addEventListener('load', () => {
+            const consent = localStorage.getItem('cookiesConsent');
+            if (consent === 'aceptado' || consent === 'rechazado') {
+                document.getElementById('cookieBanner').classList.add('hidden');
+            }
+        });
+    </script>
 </body>
+<footer class="footer">
+    <div class="footer-left">
+      <a href="https://www.instagram.com/digitalise_mataro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="img/ig.png" alt="Instagram" class="social-icon">Instagram</a>
+    </div>
+  
+    <div class="footer-center">
+      <a href="terminos.html">Política Integrada</a>
+      <a href="avis.html">Avis Legal</a>
+      <a href="#">Privacidad</a>
+      <a href="https://www.instagram.com/digitalise_mataro?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Xarxes Socials</a>
+      <a href="#">Nota de prensa</a>
+    </div>
+  
+    <div class="footer-right">
+      DIGITALISE ©2025
+    </div>
+  </footer>
 </html>
