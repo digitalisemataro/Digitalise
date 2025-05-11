@@ -140,3 +140,10 @@ p {
 img {
     width: 3%;
 }
+
+form input {
+    padding-right: 1px;
+}
+#mensaje {
+    padding: 1px;
+}

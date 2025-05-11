@@ -157,3 +157,22 @@ footer {
   background-color: #00aaff;
   color: #111;
 }
+
+#lista {
+  display: flex;
+}
+
+#l1 {
+  width: 50%; /* o cualquier ancho que quieras */
+}
+#l2 {
+  width: 20%; /* o cualquier ancho que quieras */
+}
+#l1 p {
+  display: flex 
+  text-align: center;
+}
+
+#l1 img{
+  width: 123px;
+}
