@@ -168,10 +168,6 @@ footer {
 #l2 {
   width: 20%; /* o cualquier ancho que quieras */
 }
-#l1 p {
-  display: flex 
-  text-align: center;
-}
 
 #l1 img{
   width: 123px;
