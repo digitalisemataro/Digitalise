@@ -117,3 +117,7 @@ body {
 .producto button:hover {
     background: #0088cc;
 }
+
+.producto p {
+    text-align: center;
+}
